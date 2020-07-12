@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sale_order_archive_cron" model="ir.cron">
+            <field name="name">Archive sales order</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="   ">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field name="nextcall" >2010-01-07 11:35:28</field>   <!--Static-->
+                                or
+            <field name="nextcall" eval="(datetime.now() + timedelta(days=10)).strftime('%Y-%m-%d 23:59:59')" />   <!--Dynamic-->
+            <field eval="'sale_order_archive.sale_order_archive'" name="model"/>
+            <field eval="'archive_sales_order'" name="function"/>
+        </record>
+   </data>
+</openerp>

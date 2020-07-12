@@ -1,0 +1,5 @@
+<odoo>
+    <record id="group_sale_order_archive_manager" model="res.groups">
+        <field name="name">SaleOrderArchive / Manager</field>
+    </record>
+</odoo>

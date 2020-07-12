@@ -1,0 +1,64 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="sale_order_archive.list">
+      <field name="name">sale_order_archive list</field>
+      <field name="model">sale_order_archive.sale_order_archive</field>
+      <field name="arch" type="xml">
+        <tree string="Sale order archive list">
+                <field name="name"/>
+                <field name="order_create_date"/>
+                <field name="customer" widget="many2one_tags"/>
+                <field name="sale_person" widget="many2one_tags"/>
+                <field name="order_total_amount"/>
+                <field name="order_currency"/>
+                <field name="count_order_lines"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="sale_order_archive.action_window">
+      <field name="name">sale_order_archive window</field>
+      <field name="res_model">sale_order_archive.sale_order_archive</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="sale_order_archive.action_server">
+      <field name="name">sale_order_archive server</field>
+      <field name="model_id" ref="model_sale_order_archive_sale_order_archive"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="sale_order_archive" id="sale_order_archive.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="sale_order_archive.menu_1" parent="sale_order_archive.menu_root"/>
+    <menuitem name="Menu 2" id="sale_order_archive.menu_2" parent="sale_order_archive.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="sale_order_archive.menu_1_list" parent="sale_order_archive.menu_1"
+              action="sale_order_archive.action_window"/>
+    <menuitem name="Server to list" id="sale_order_archive" parent="sale_order_archive.menu_2"
+              action="sale_order_archive.action_server"/>
+-->
+  </data>
+</odoo>

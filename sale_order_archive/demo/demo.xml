@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+
+          <record id="object0" model="sale_order_archive.sale_order_archive">
+              <field name="name">name0</field>
+              <field name="order_create_date">2020-06-01</field>
+              <field name="customer" widget="many2one_tags">uuuu</field>
+              <field name="sale_person" widget="many2one_tags">aaaa</field>
+              <field name="order_total_amount">1000</field>
+              <field name="order_currency">PLN</field>
+              <field name="count_order_lines">3</field>
+          </record>
+
+          <record id="object1" model="sale_order_archive.sale_order_archive">
+              <field name="name">name1</field>
+              <field name="order_create_date">2020-06-01</field>
+              <field name="customer" widget="many2one_tags">uuudddu</field>
+              <field name="sale_person" widget="many2one_tags">addddaaa</field>
+              <field name="order_total_amount">200</field>
+              <field name="order_currency">PLN</field>
+              <field name="count_order_lines">4</field>
+          </record>
+
+          <record id="object2" model="sale_order_archive.sale_order_archive">
+              <field name="name">name2</field>
+              <field name="order_create_date">2020-07-01</field>
+              <field name="customer" widget="many2one_tags">uaduuu</field>
+              <field name="sale_person" widget="many2one_tags">aaaasdfa</field>
+              <field name="order_total_amount">100012</field>
+              <field name="order_currency">PLN</field>
+              <field name="count_order_lines">1</field>
+          </record>
+
+          <record id="object3" model="sale_order_archive.sale_order_archive">
+              <field name="name">name3</field>
+              <field name="order_create_date">2020-06-020</field>
+              <field name="customer" widget="many2one_tags">LLLuuuu</field>
+              <field name="sale_person" widget="many2one_tags">LLaaaa</field>
+              <field name="order_total_amount">800</field>
+              <field name="order_currency">PLN</field>
+              <field name="count_order_lines">23</field>
+          </record>
+
+          <record id="object4" model="sale_order_archive.sale_order_archive">
+              <field name="name">name4</field>
+              <field name="order_create_date">2020-05-01</field>
+              <field name="customer" widget="many2one_tags">uadjkfuuu</field>
+              <field name="sale_person" widget="many2one_tags">aaaadfa</field>
+              <field name="order_total_amount">234</field>
+              <field name="order_currency">PLN</field>
+              <field name="count_order_lines">1</field>
+          </record>
+
+    </data>
+</odoo>
