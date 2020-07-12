@@ -10,7 +10,7 @@ class sale_order_archive(models.Model):
     name = fields.Char(string='Name', required=True)
     order_create_date = fields.Date(string='Order create date', required=True)
     customer = fields.Many2one('res.partner', string='Customer', required=True)
-    sale_person = fields.Many2one('res.user', string='Sale person', required=True)
+    sale_person = fields.Many2one('res.users', string='Sale person', required=True)
     order_total_amount = fields.Monetary(currency_field='order_currency', string='Order total amount', required=True)
     order_currency = fields.Many2one('res.currency', string='Currency', required=True)
     count_order_lines = fields.Integer(string='Count of order lines', required=True)
