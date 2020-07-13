@@ -1,9 +1,3 @@
 <odoo>
-    <menuitem id="main_sale_order_archive_menu" name="Sale order archive"/>
-<!--              groups="group_sale_order_archive_manager"/>-->
-    <menuitem id="sale_order_archive_menu" name="Sale order archive" parent="main_sale_order_archive_menu"/>
-<!--              groups="group_sale_order_archive_manager"-->
-
-    <menuitem id="sale_order_archive_sub_menu" name="Sale order archive" parent="sale_order_archive_menu"
-              action="sale_order_archive_list_action"/>
+    <menuitem id="sale_order" name="Archived Orders" parent="sale.sale_order_menu" action="sale_order_archive_list_action"/>
 </odoo>
