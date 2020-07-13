@@ -25,6 +25,7 @@
         'views/templates.xml',
         'views/sale_order_archive.xml',
         'views/sale_order_archive_menu.xml',
+        'data/sale_order_archive_cron.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
