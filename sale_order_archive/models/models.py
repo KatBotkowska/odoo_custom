@@ -21,9 +21,10 @@ class sale_order_archive(models.Model):
     def _archive_sale_orders(self):
         border_date = datetime.datetime.now() - datetime.timedelta(days=7)
         date = border_date.strftime("%Y-%m-%d")
-        orders_to_archive = self.env['sale_order_archive.sale_order_archive'].search([('create_date', '>', date)])
+        orders_to_archive = self.env['sale.order'].search([('create_date', '>', date)])
         if orders_to_archive:
             for set in orders_to_archive:
+                lines = len(self.env['sale.order.line'].search([('order_id', '=', set['id'])])._ids)
                 self.env['sale_order_archive.sale_order_archive'].create({
                     'name': set['name'],
                     'create_date': set['create_date'],
@@ -31,7 +32,7 @@ class sale_order_archive(models.Model):
                     'user_id': set['user_id'],
                     'amount_total': set['amount_total'],
                     'currency_id': set['currency_id'],
-                    'order_line': set['order_line']
+                    'order_line': lines
                 })
             orders_to_archive.unlink()
             logging.info('Archive done')
