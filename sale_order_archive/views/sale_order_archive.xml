@@ -5,13 +5,13 @@
         <field name="model">sale_order_archive.sale_order_archive</field>
         <field name="arch" type="xml">
             <tree string="Sale order archive list">
-                <field name="name"/>
-                <field name="order_create_date"/>
-                <field name="customer" widget="many2one_tags"/>
-                <field name="sale_person" widget="many2one_tags"/>
-                <field name="order_total_amount"/>
-                <field name="order_currency"/>
-                <field name="count_order_lines"/>
+                <field name="name" string="Name"/>
+                <field name="create_date" string="Order create date"/>
+                <field name="partner_id" string="Customer" widget="many2one_tags"/>
+                <field name="user_id" string="Sale person" widget="many2one_tags"/>
+                <field name="amount_total" string="Order total amount"/>
+                <field name="currency_id" string="Currency"/>
+                <field name="order_line" string="Count of order lines"/>
             </tree>
         </field>
     </record>
@@ -21,20 +21,30 @@
         <field name="model">sale_order_archive.sale_order_archive</field>
         <field name="arch" type="xml">
             <form string="Sale order archive list">
-                <field name="name"/>
-                <field name="order_create_date"/>
-                <field name="customer" widget="many2one_tags"/>
-                <field name="sale_person" widget="many2one_tags"/>
-                <field name="order_total_amount"/>
-                <field name="order_currency"/>
-                <field name="count_order_lines"/>
+                <sheet>
+                    <group>
+                        <field name="name" string="Name"/>
+                    </group>
+                    <group>
+                        <field name="create_date" string="Order create date"/>
+                    </group>
+                    <group>
+                        <field name="partner_id" string="Customer" widget="many2one_tags"/>
+                        <field name="user_id" string="Sale person" widget="many2one_tags"/>
+                    </group>
+                    <group>
+                        <field name="amount_total" string="Order total amount"/>
+                        <field name="currency_id" string="Currency"/>
+                        <field name="order_line" string="Count of order lines"/>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
 
-<record model="ir.actions.act_window" id="sale_order_archive_list_action">
-      <field name="name">sale_order_archive window</field>
-      <field name="res_model">sale_order_archive.sale_order_archive</field>
-      <field name="view_mode">tree,form</field>
+    <record model="ir.actions.act_window" id="sale_order_archive_list_action">
+        <field name="name">sale_order_archive window</field>
+        <field name="res_model">sale_order_archive.sale_order_archive</field>
+        <field name="view_mode">tree,form</field>
     </record>
 </odoo>
