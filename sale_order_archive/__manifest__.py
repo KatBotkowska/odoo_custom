@@ -21,8 +21,6 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
         'views/sale_order_archive.xml',
         'views/sale_order_archive_menu.xml',
         'data/sale_order_archive_cron.xml',
