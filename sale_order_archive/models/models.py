@@ -24,6 +24,7 @@ class sale_order_archive(models.Model):
         orders_to_archive = self.env['sale.order'].search([('create_date', '>', date)])
         if orders_to_archive:
             for set in orders_to_archive:
+                print(set)
                 lines = len(self.env['sale.order.line'].search([('order_id', '=', set['id'])])._ids)
                 self.env['sale_order_archive.sale_order_archive'].create({
                     'name': set['name'],
@@ -31,7 +32,7 @@ class sale_order_archive(models.Model):
                     'partner_id': set['partner_id'],
                     'user_id': set['user_id'],
                     'amount_total': set['amount_total'],
-                    'currency_id': set['currency_id'],
+                    'currency_id': self.env['res.currency'].search([('currency_id', '=', set['currency_id'])]).id,
                     'order_line': lines
                 })
             orders_to_archive.unlink()

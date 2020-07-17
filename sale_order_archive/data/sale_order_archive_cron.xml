@@ -8,7 +8,7 @@
             <field name="interval_type">hours</field>
             <field name="numbercall">-1</field>
             <field name="doall">1</field>
-            <field name="nextcall">2020-07-14 20:59:00</field>
+            <field name="nextcall">2020-07-17 21:28:00</field>
             <field name="model_id" ref="sale_order_archive.model_sale_order_archive_sale_order_archive"/>
             <field name="code">model._archive_sale_orders()</field>
              <field name="state">code</field>
