@@ -22,6 +22,9 @@ class sale_order_archive(models.Model):
         border_date = datetime.datetime.now() - datetime.timedelta(days=7)
         date = border_date.strftime("%Y-%m-%d")
         orders_to_archive = self.env['sale.order'].search([('create_date', '>', date)])
+        # Lines cannot be deleted if the order is confirmed
+        # You can not remove an order line once the sales order is confirmed.\nYou should rather set the quantity to 0.
+        # def unlink https://github.com/odoo/odoo/blob/13.0/addons/sale/models/sale.py
         if orders_to_archive:
             for set in orders_to_archive:
                 print(set)
