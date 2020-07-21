@@ -25,7 +25,7 @@ class sale_order_archive(models.Model):
         # Lines cannot be deleted if the order is confirmed
         # You can not remove an order line once the sales order is confirmed.\nYou should rather set the quantity to 0.
         # def unlink https://github.com/odoo/odoo/blob/13.0/addons/sale/models/sale.py
-        if orders_to_archive:
+        if orders_to_archive and orders_to_archive.status in ('draft', 'cancel'):
             for set in orders_to_archive:
                 print(set)
                 lines = len(self.env['sale.order.line'].search([('order_id', '=', set['id'])])._ids)
@@ -47,4 +47,4 @@ class sale_order_archive(models.Model):
             orders_to_archive.unlink()
             logging.info('Archive done')
         else:
-            logging.info('No rows to archive')
+            logging.info('No orders to archive')
